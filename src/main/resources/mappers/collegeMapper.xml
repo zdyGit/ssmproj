@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
 <!--命名空间应该是对应接口的包名+类名 -->
 <mapper namespace="com.zdy.mappers.ICollegeMapper">
     <!--id应该是接口中的方法，结果类型如没有配置别名则应该使用全名称 -->
-    <select id="addCollage" >
-        select id,typeName from booktypes
+    <select id="getColleges"  resultType="com.zdy.domain.College">
+        select * from tb_College;
     </select>
+
+    <select id="getCollegesByID" resultType="com.zdy.domain.College">
+        select * from tb_College t where t.collegeID = #{collegeID};
+    </select>
+
+    <insert id="addCollage" parameterType="com.zdy.domain.College">
+        insert into tb_College (collegeID,collegeName,collegeAddr,buildDate,collegeStatus) values (#{collegeID},#{collegeName},#{collegeAddr},#{buildDate},#{collegeStatus});
+    </insert>
 </mapper>

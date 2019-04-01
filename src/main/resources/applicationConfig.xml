@@ -35,10 +35,15 @@
         <property name="mapperLocations" value="classpath:mappers/*Mapper.xml"></property>
     </bean>
 
+    <bean id="collegeMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.zdy.mappers.ICollegeMapper" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+
     <!--定义事物管理器，由spring管理事务 -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="datasource"></property>
     </bean>
 
-    <context:component-scan base-package="com.zdy.domain"/>
+    <context:component-scan base-package="com.zdy.domain,com.zdy.dao,com.zdy.service"/>
 </beans>

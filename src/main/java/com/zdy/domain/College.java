@@ -1,5 +1,6 @@
 package com.zdy.domain;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component("college")
@@ -8,7 +9,8 @@ public class College {
     private String collegeName;
     private String collegeAddr;
     private String buildDate;
-    private CollegeStatus collegeStatus;
+    @Value("0")
+    private int collegeStatus;
 
     public College(){}
 
@@ -44,11 +46,11 @@ public class College {
         this.buildDate = buildDate;
     }
 
-    public CollegeStatus getCollegeStatus() {
+    public int getCollegeStatus() {
         return collegeStatus;
     }
 
-    public void setCollegeStatus(CollegeStatus collegeStatus) {
+    public void setCollegeStatus(int collegeStatus) {
         this.collegeStatus = collegeStatus;
     }
 }
