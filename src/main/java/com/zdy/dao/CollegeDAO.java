@@ -30,11 +30,11 @@ public class CollegeDAO implements ICollegeMapper {
 
     @Override
     public void delCollage(int collegeID) {
-
+        iCollegeMapper.delCollage(collegeID);
     }
 
     @Override
     public void updateCollage(College college) {
-
+        iCollegeMapper.updateCollage(college);
     }
 }

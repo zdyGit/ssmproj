@@ -53,4 +53,9 @@ public class College {
     public void setCollegeStatus(int collegeStatus) {
         this.collegeStatus = collegeStatus;
     }
+
+    @Override
+    public String toString(){
+        return String.format("college:%d %s %s %s %d",this.getCollegeID(),this.getCollegeName(),this.getCollegeAddr(),this.getBuildDate(),this.getCollegeStatus());
+    }
 }

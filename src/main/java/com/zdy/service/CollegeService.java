@@ -20,4 +20,12 @@ public class CollegeService {
     public List<College> getColleges(){
         return collegeDAO.getColleges();
     }
+
+    public void delCollege(int collegeID){
+        collegeDAO.delCollage(collegeID);
+    }
+
+    public void updateCollege(College college){
+        collegeDAO.updateCollage(college);
+    }
 }

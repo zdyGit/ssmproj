@@ -16,4 +16,12 @@
     <insert id="addCollage" parameterType="com.zdy.domain.College">
         insert into tb_College (collegeID,collegeName,collegeAddr,buildDate,collegeStatus) values (#{collegeID},#{collegeName},#{collegeAddr},#{buildDate},#{collegeStatus});
     </insert>
+
+    <delete id="delCollage">
+        delete t from tb_College t where t.collegeID = #{collegeID};
+    </delete>
+
+    <update id="updateCollage" parameterType="com.zdy.domain.College">
+        update t set t.collegeName = #{collegeName},t.collegeAddr = #{collegeAddr},t.collegeStatus=#{collegeStatus} from tb_College t where t.collegeID = #{collegeID};
+    </update>
 </mapper>
