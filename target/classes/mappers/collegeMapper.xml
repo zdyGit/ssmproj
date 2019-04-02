@@ -22,6 +22,6 @@
     </delete>
 
     <update id="updateCollage" parameterType="com.zdy.domain.College">
-        update t set t.collegeName = #{collegeName},t.collegeAddr = #{collegeAddr},t.collegeStatus=#{collegeStatus} from tb_College t where t.collegeID = #{collegeID};
+        update tb_College set collegeName = #{collegeName},collegeAddr = #{collegeAddr},collegeStatus=#{collegeStatus} where collegeID = #{collegeID};
     </update>
 </mapper>
